@@ -1,0 +1,90 @@
+<!-- <div>
+    <mat-drawer-container class="test">
+        <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+        <mat-drawer-content>Main content</mat-drawer-content>
+      </mat-drawer-container>
+</div> -->
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="left-card">
+<h3>Weather App</h3>
+<h4>
+  <mat-label>Select Location to check weather</mat-label>
+</h4>
+<mat-list>
+  <span *ngFor="let location of locations">
+    <mat-list-item (click)="fetchWeatherData(location.value)" class="selection">{{location.label}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </span>
+  </mat-list>
+<!-- <mat-form-field floatLabel="never">
+  <mat-label>Location</mat-label>
+  <mat-select (selectionChange)="fetchWeatherData($event.value)">
+    <mat-option *ngFor="let location of locations" [value]="location.value">
+      {{location.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+</div>
+<!-- <ng-container>
+        {{this.livedata | json}}
+      </ng-container> -->
+<div class="right-card"
+  [ngClass]="{'Campbell':(livedata && livedata.location=='Campbell'),'Omaha':(livedata && livedata.location=='Omaha'),'Austin':(livedata && livedata.location=='Austin'),'Niseko':(livedata && livedata.location=='Niseko'),'Nara':(livedata && livedata.location=='Nara'),'Jakarta':(livedata && livedata.location=='Jakarta')}">
+
+  <div class="main-content">
+    <ng-container>
+    <span *ngIf="livedata" >
+      <mat-card class="daily-box">
+        <mat-card-content class="currentdata">
+          <div class="pull-left">{{livedata.location}}</div>
+          <span class="temp">{{convertF2C(livedata.info.currently.temperature) | number:'2.1-2'}}<sup>o</sup>C</span>
+          <span style="float: right;"><app-weathericon [icon]="livedata.info.currently.icon"></app-weathericon></span>
+          
+        </mat-card-content>
+        <mat-card-content class="extradata">
+          ozone : {{livedata.info.currently.ozone}}
+        </mat-card-content>
+        <mat-card-content class="extradata">
+          humidity : {{livedata.info.currently.humidity}}<br>
+        </mat-card-content>
+        <mat-card-content class="extradata">visibility : {{livedata.info.currently.visibility}}<br></mat-card-content>
+        <mat-card-content class="extradata">windSpeed : {{livedata.info.currently.windSpeed}}</mat-card-content>
+
+      </mat-card>
+      <mat-card class="day-box" *ngFor="let dayData of livedata.info.daily.data | slice:2">
+        <mat-card-content class="tempbg">
+
+          <span class="wdayTitle"><b>{{dayData.time * 1000 | date :'EEEE'}}</b></span><br>
+          <span class="dayTitle"><b>{{dayData.time * 1000 | date:'MM/dd/yy'}}</b></span><br>
+          <app-weathericon [icon]="dayData.icon"></app-weathericon>
+          High: {{convertF2C(dayData.temperatureHigh) | number:'2.1-2'}}<sup>o</sup>C<br>
+          Low: {{convertF2C(dayData.temperatureLow) | number:'2.1-2'}}<sup>o</sup>C<br>
+          Summery: {{dayData.summary}}
+        </mat-card-content>
+      </mat-card>
+    </span>
+  </ng-container>
+  </div>
+  <!-- <mat-list role="list" *ngIf="livedata">
+          <mat-list-item role="listitem" *ngFor="let dayData of livedata.info.daily.data">
+            Max:<span>{{convertF2C(dayData.temperatureHigh)}}</span>, 
+            Min:<span>{{convertF2C(dayData.temperatureLow)}}</span>
+          </mat-list-item>
+        </mat-list> -->
+  <!-- <mat-grid-list cols="2" rowHeight="2:1" class="day-head">
+    <mat-grid-tile class="day-tile">1</mat-grid-tile>
+    <mat-grid-tile class="day-tile">2</mat-grid-tile>
+    <mat-grid-tile class="day-tile">3</mat-grid-tile>
+    <mat-grid-tile class="day-tile">4</mat-grid-tile>
+  </mat-grid-list> -->
+
+  <!-- <mat-grid-list cols="7" rowHeight="1:1">
+          <mat-grid-tile *ngFor="let dayData of livedata.info.daily.data">
+            <div>{{convertF2C(dayData.temperatureHigh)}}</div>
+            <div>{{convertF2C(dayData.temperatureLow)}}</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      {{livedata.location}}<br> -->
+  <!-- {{storedResponse.info.current}} -->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,170 @@
+.day-tile{
+    width:10%;
+    position:relative;
+    float:left
+}
+.day-head{
+    width:50%;
+    margin:10%;
+    background-color: aliceblue
+}
+.day-box{
+    width:12%;
+    height:200px;
+    margin:10px;
+    float: left;
+    text-align: center;
+}
+.day-box-header{
+    border-bottom: 2px sloid black;
+    float:left
+}
+.mat-card{
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.900); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+}
+
+.main-content{
+  padding: 3%;
+  margin: 5%;
+}
+.Campbell{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Campbell.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.Omaha{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Omaha.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.Austin{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Austin.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.Niseko{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Niseko.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.Nara{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Nara.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.Jakarta{
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+    background: url('../assets/Jakartha.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  
+  box-shadow: 5px 5px 5px 5px
+}
+.dayTitle{
+    font-size: 20px;
+}
+.wdayTitle{
+    font-size: 15px;
+}
+.daily-box{
+    width:40%;
+    height:400px;
+    margin:10px;
+    float: left;
+    text-align: center;    
+    font-family: 'Trebuchet MS';
+    // background-image: url('../assets/bg.jpg')
+    
+}
+.currentdata{
+    font-size:30px;
+    font-family: cursive;
+    
+}
+// .weatherIcon{
+//     font-size: 20px;
+// }
+.extradata{
+    border-bottom: 2px sloid black;
+    font-size: 30px;
+    
+    text-align: center;
+}
+// .container .content {
+//   position: absolute;
+//   bottom: 0;
+//   background: rgb(0, 0, 0); /* Fallback color */
+//   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+//   color: #f1f1f1;
+//   width: 100%;
+//   padding: 20px;
+// }
+.test{
+  
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid red;
+  background-color: aquamarine;
+}
+.left-card{
+  width:20%;
+  float: left;
+}
+.right-card{
+  vertical-align: middle;
+  width: 80%;
+  float: left; 
+}
+.selection{
+  cursor: pointer;
+}
+.temp{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 75px;
+}
+.pull-left{
+  text-align: left;
+}
