@@ -31,15 +31,14 @@ public class WeatherController {
 	  */
 	@CrossOrigin(origins="http://localhost:4200")
  	@RequestMapping(value = "/getWeather/{city}", method = RequestMethod.GET, produces = "application/json")
-	public String data(@PathVariable String city) {
+	public String getWeatherApp(@PathVariable String city) {
 		System.out.println("City = "+city);
 		LOGGER.info("WeatherController :: getWeatherApp()");
 		LOGGER.info("City Name: "+city);
  		String output = null;
 		String finalOutput = "";
 		  try {
-			  
-//			URL url = new URL("https://api.darksky.net/forecast/aae5edbb02f5660b506f6d7edbc218bd/42.3601,-71.0589");
+
 			URL url = WeatherURL.getWeatherURL(city); 
 			LOGGER.info("fetched url = "+url);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -68,7 +67,7 @@ public class WeatherController {
 			  LOGGER.info("Connection Disconnected..!!");
 
 		  } catch (MalformedURLException e) {
-
+			
 			e.printStackTrace();
 
 		  } catch (IOException e) {
