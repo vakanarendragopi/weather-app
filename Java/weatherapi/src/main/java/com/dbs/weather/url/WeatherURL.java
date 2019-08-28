@@ -2,17 +2,24 @@ package com.dbs.weather.url;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
+import java.util.logging.Logger;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+
+/***
+ * 
+ * @author V Narendra Gopi
+ *	class creates the url to get weather depending on location langittude and lattitude details
+ */
 
 @Component
 @PropertySource("classpath:weather.properties")
 public class WeatherURL {
-
+private static final Logger LOGGER = Logger.getLogger(WeatherURL.class.getName());
 	static URL uri;
 
 	public static URL getWeatherURL(String city) {
+		LOGGER.info("WeatherURL :: getWeatherURL()");
 		switch (city) {
 		case "Campbell":
 			try {
@@ -64,6 +71,7 @@ public class WeatherURL {
 			}
 			break;
 		}
+		LOGGER.info("WeatherURL :: getWeatherURL() url ->  "+uri);
 		return uri;
 
 	}
